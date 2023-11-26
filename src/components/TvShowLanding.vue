@@ -10,14 +10,13 @@ import TvShowCrouselMobile from './molecules/TvShowCarouselMobile.vue'
 import TVShowAppName from './atoms/TVShowAppName.vue'
 import { useMatches } from 'vue-responsiveness'
 import { Slide } from 'vue3-burger-menu'
-import { BeatLoader } from "vue3-spinner";
-
+import { BeatLoader } from 'vue3-spinner'
 
 const matches = useMatches()
 
 const tvShowsStore = useTvShowsStore()
 const genres = ref()
-const isOpen = ref(false);
+const isOpen = ref(false)
 genres.value = [
   'Action',
   'Adventure',
@@ -53,29 +52,34 @@ const computedSearchResult = computed(() =>
   )
 )
 
-const isMobile = computed(() => matches?.current === 'xs' || matches?.current === 'sm')
+const isMobile = computed(
+  () => matches?.current === 'xs' || matches?.current === 'sm'
+)
 
 const genreChange = ({ genre }) => {
   selectedGenre.value = genre
 }
 
 const closeGereSlide = () => {
-  isOpen.value = false;
+  isOpen.value = false
 }
 </script>
 <template>
-
   <!-- Small screen genre list toggle -->
-  <Slide closeOnNavigation :isOpen="isOpen" @closeMenu="closeGereSlide">
+  <Slide
+    :closeOnNavigation="true"
+    v-if="isMobile"
+    :isOpen="isOpen"
+    @closeMenu="closeGereSlide"
+  >
     <TvShowPostarCardMobile :genres="genres" @genre-change="genreChange" />
   </Slide>
 
-  <TVShowAppName v-if="!isMobile"/>
+  <TVShowAppName v-if="!isMobile" />
 
   <TvShowsSearchBar v-model="searchValue" />
-    <div v-if="isMobile" style="margin-top:5rem"></div>
-  <BeatLoader
-  :loading="!computedTvShows"/>
+  <div v-if="isMobile" style="margin-top: 5rem"></div>
+  <BeatLoader :loading="!computedTvShows" />
   <!-- Large device genre   -->
   <div v-if="!displaySearchedList && !isMobile && computedTvShows">
     <TvShowPostarCard :genres="genres" @genre-change="genreChange" />
@@ -103,7 +107,7 @@ const closeGereSlide = () => {
 }
 
 .bm-burger-bars {
-    background-color: hsla(160, 100%, 37%, 1) !important;
+  background-color: hsla(160, 100%, 37%, 1) !important;
 }
 
 @media only screen and (min-width: 992px) {

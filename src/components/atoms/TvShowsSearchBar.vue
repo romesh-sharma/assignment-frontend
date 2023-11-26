@@ -18,6 +18,7 @@ const inputValue = computed({
     v-bind="$attrs"
     ref="input"
     name="search"
+    id="search"
     class="search-box"
     v-model="inputValue"
     placeholder="Find by TV show name..."
@@ -27,15 +28,15 @@ const inputValue = computed({
 
 <style lang="scss" scoped>
 @media only screen and (min-width: 1000px) {
-.search-box {
-  padding: 0.5em;
+  .search-box {
+    padding: 0.5em;
     line-height: 1.5em;
     border: 1px solid rgb(204, 204, 204);
     border-radius: 0.125rem;
     position: absolute;
     top: 28px;
     right: 15px;
-}
+  }
 }
 
 @media only screen and (min-width: 1920px) {

@@ -59,10 +59,10 @@ const router = useRouter()
 }
 
 @media only screen and (min-width: 960px) {
-.carousel__slide {
-  padding: 10px;
-  width: 15% !important;
-}
+  .carousel__slide {
+    padding: 10px;
+    width: 15% !important;
+  }
 }
 .carousel__prev {
   box-sizing: content-box !important;

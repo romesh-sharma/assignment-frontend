@@ -9,8 +9,6 @@ const props = defineProps({
   }
 })
 const router = useRouter()
-
-
 </script>
 <template>
   <Carousel>
@@ -72,13 +70,13 @@ const router = useRouter()
 }
 
 @media only screen and (max-width: 960px) {
-.carousel__track {
+  .carousel__track {
     display: flex;
     padding: 0 !important;
     position: relative;
     flex-direction: column;
     align-content: center;
     flex-wrap: wrap;
-}
+  }
 }
 </style>

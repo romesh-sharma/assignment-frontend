@@ -62,11 +62,11 @@ const onClick = (genre) => {
 }
 
 .content-wrapper {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    align-content: stretch;
-    align-items: stretch;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-content: stretch;
+  align-items: stretch;
+  flex-wrap: wrap;
 }
 </style>

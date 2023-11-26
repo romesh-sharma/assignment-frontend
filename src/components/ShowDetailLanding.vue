@@ -3,7 +3,7 @@ import tvShowsService from '../services/tv-shows.service'
 import TvShowDetailOverview from './atoms/TvShowDetailOverview.vue'
 import { useRoute } from 'vue-router'
 import { ref } from 'vue'
-import { BeatLoader } from "vue3-spinner";
+import { BeatLoader } from 'vue3-spinner'
 
 const route = useRoute()
 const { id } = route.params
@@ -21,8 +21,6 @@ getShowById()
 </script>
 
 <template>
-  
-<BeatLoader
-  :loading="!showDetail"/>
+  <BeatLoader :loading="!showDetail" />
   <TvShowDetailOverview v-if="showDetail" :tv-show="showDetail" />
 </template>
