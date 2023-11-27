@@ -15,6 +15,8 @@ Using ```Pinia``` for state management.
 
 Using ```Jest``` for Unit Testing.
 
+Using ```TestCafe``` for e2e Testing.
+
 Using ```ESLint``` for code quality.
 
 Using ```Prettier``` for code formatting.
